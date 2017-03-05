@@ -10,11 +10,9 @@ So you can use mounts as system Servie.
 
 for Example:
  
-  systemctl status mount-point.mount
-  
-  systemctl start mount-point.mount
-  
-  systemctl stop mount-point.mount
+    systemctl status mount-point.mount
+    systemctl start mount-point.mount
+    systemctl stop mount-point.mount
 
 
 Options:
