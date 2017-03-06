@@ -5,7 +5,9 @@ systemd mounts
 Setup mounts as sysemd Service
 
 This Playbook creates a Systemd Service for mounting Shares.
+
 So you can use mounts as system Servie.
+
 Works for debian stretch, and Jessie if you use systemd.
 
 for Example:
