@@ -20,7 +20,7 @@ for Example:
 Options:
 --------
 
-    Appdir:                             # description of the Service
+    Appdir:                           # description of the Service
     share: //apps.local/apps$         # Share to mount from
     mount: /opt/app                   # Folder to mount in
     type: nfs                         # mount type (look at mount man page)
