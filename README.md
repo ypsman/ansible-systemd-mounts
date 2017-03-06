@@ -2,7 +2,7 @@ systemd mounts
 ==============
 [![Build Status](https://travis-ci.org/ypsman/ansible-systemd-mounts.svg?branch=master)](https://travis-ci.org/ypsman/ansible-systemd-mounts)
 
-Setup mounts as sysemd Service
+Setup mounts as sysemd Service.
 
 This Playbook creates a Systemd Service for mounting Shares.
 
