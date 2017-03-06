@@ -11,15 +11,16 @@ So you can use mounts as system Servie.
 Works for debian stretch, and Jessie if you use systemd.
 
 for Example:
-  systemctl status mount-point.mount
-  systemctl start mount-point.mount
-  systemctl stop mount-point.mount
+    
+    systemctl status mount-point.mount
+    systemctl start mount-point.mount
+    systemctl stop mount-point.mount
 
 
 Options:
 --------
 
-  Appdir:                             # description of the Service
+    Appdir:                             # description of the Service
     share: //apps.local/apps$         # Share to mount from
     mount: /opt/app                   # Folder to mount in
     type: nfs                         # mount type (look at mount man page)
