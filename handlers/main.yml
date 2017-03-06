@@ -1,0 +1,28 @@
+---
+# handlers file for systemd-mounts
+- name: reload systemd
+  command: systemctl daemon-reload
+
+- name: Enable systemd mount
+  command: systemctl enable  "{{ item.value.mount[1:] | replace('/', "-") }}.mount"
+  with_dict: "{{ mounts }}"
+  notify: Start systemd mount
+  when: item.value.automount == false
+
+- name: Start systemd mount
+  command: systemctl start  "{{ item.value.mount[1:] | replace('/', "-") }}.mount"
+  with_dict: "{{ mounts }}"
+  notify: reload systemd
+  when: item.value.automount == false
+
+- name: Enable systemd automount
+  command: systemctl enable  "{{ item.value.mount[1:] | replace('/', "-") }}.automount"
+  with_dict: "{{ mounts }}"
+  notify: Start systemd automount
+  when: item.value.automount == true
+
+- name: Start systemd automount
+  command: systemctl start  "{{ item.value.mount[1:] | replace('/', "-") }}.automount"
+  with_dict: "{{ mounts }}"
+  notify: reload systemd
+  when: item.value.automount == true

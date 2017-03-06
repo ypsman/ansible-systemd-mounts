@@ -5,26 +5,25 @@ systemd mounts
 Setup mounts as sysemd Service
 
 This Playbook creates a Systemd Service for mounting Shares.
-
 So you can use mounts as system Servie.
+Works for debian stretch, and Jessie if you use systemd.
 
 for Example:
- 
-    systemctl status mount-point.mount
-    systemctl start mount-point.mount
-    systemctl stop mount-point.mount
+  systemctl status mount-point.mount
+  systemctl start mount-point.mount
+  systemctl stop mount-point.mount
 
 
 Options:
 --------
 
-      Appdir:                           # description of the Service
-      share: //apps.local/apps$         # Share to mount from
-      mount: /opt/app                   # Folder to mount in
-      type: nfs                         # mount type (look at mount man page)
-      options: uid=1000                 # Options, username...
-      automount: false                  # If false: the service will mount at boot
-                                        # if true: Mount when access on the Folder
+  Appdir:                             # description of the Service
+    share: //apps.local/apps$         # Share to mount from
+    mount: /opt/app                   # Folder to mount in
+    type: nfs                         # mount type (look at mount man page)
+    options: uid=1000                 # Options, username...
+    automount: false                  # If false: the service will mount at boot
+                                      # if true: Mount when access on the Folder and on boot
 
 
 Example Playbook

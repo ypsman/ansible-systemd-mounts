@@ -1,0 +1,18 @@
+galaxy_info:
+  author: ypsman
+  description: Setup mounts and automount as Systemd service
+  license: license (GPLv2, CC-BY, etc)
+  min_ansible_version: 1.2
+  platforms:
+  - name: Debian
+    versions:
+    - stretch
+  galaxy_tags:
+  - systemd
+  - mounts
+  - mount
+  - nfs
+  - cifs
+  - automount
+  - debian
+dependencies: []

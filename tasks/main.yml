@@ -1,0 +1,17 @@
+---
+# tasks file for systemd-mounts
+- name: Setup systemd Service for mountpoints
+  template:
+    src: systemd_mount.j2
+    dest: /etc/systemd/system/{{ item.value.mount[1:] | replace('/', "-") }}.mount
+  with_dict: "{{ mounts }}"
+  notify: Enable systemd mount
+  when: item.key is defined
+
+- name: Setup systemd Service for automount
+  template:
+    src: systemd_automount.j2
+    dest: /etc/systemd/system/{{ item.value.mount[1:] | replace('/', "-") }}.automount
+  with_dict: "{{ mounts }}"
+  notify: Enable systemd automount
+  when: item.value.automount is defined
