@@ -5,8 +5,8 @@ After=network.target multi-user.target
 [Mount]
 What={{ item.value.share }}
 Where={{ item.value.mount }}
-Type={{ item.value.type | default (mounts_type) }}
-Options={{ item.value.options | default (mounts_options) }}
+Type={{ item.value.type | default ('mounts_type') }}
+Options={{ item.value.options | default ('mounts_options') }}
 
 [Install]
 WantedBy=default.target
