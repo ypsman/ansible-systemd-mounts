@@ -14,4 +14,4 @@
     dest: /etc/systemd/system/{{ item.value.mount[1:] | replace('/', "-") }}.automount
   with_dict: "{{ mounts }}"
   notify: Enable systemd automount
-  when: item.value.automount is defined
+  when: item.value.automount
